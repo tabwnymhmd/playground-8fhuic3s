@@ -1,11 +1,18 @@
 # Welcome!
 
-This Python template lets you get started quickly with a simple one-page playground.
+this is a function to float range in python
 
 ```python runnable
-print('Hello World!')
+from itertools import takewhile, count
+
+def floatrange (_start: float, _stop: float = None, _step: float = 1) :
+    
+    if _stop is None :
+        _start, _stop = 0, _start
+    for n in takewhile(lambda n:n < _stop, count(_start, _step)):
+        yield n
+
+// testing ...
+print(list(floatrange(3.5, 10)))
+print(list(floatrange(3.5, 10, 0.5)))
 ```
-
-# Advanced usage
-
-If you want a more complex example (external libraries, viewers...), use the [Advanced Python template](https://tech.io/select-repo/429)
